@@ -7,10 +7,14 @@ Ext.require([
     'Ext.List'
 ]);
 
+// Main application entry point
 Ext.application({
 	phoneStartupScreen: 'images/sencha_logo.png',
-    name: 'HelloWorld',          
-    controllers: ['Home'],		
+	name: 'HelloWorld',  
+    // the controller will take care of creating the view        
+	controllers: ['Home'],
+	// You could delete this, here only to illustrate
+    // the sequence of events		
 	initialize: function () {
 		console.log('app initialize');
 		this.callParent();
@@ -22,8 +26,8 @@ Ext.application({
 		    // clean instantiation using the widget.alias's defined
             // in each view
 			items: [
-                { xtype: 'simplelist' },
-                { xtype: 'home' }
+                { xtype: 'home' },
+				{ xtype: 'simplelist' }                
             ]
 		});
     }
