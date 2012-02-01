@@ -4,15 +4,16 @@ Ext.define('HelloWorld.controller.Home', {
 	stores: ['Stations'],
     // These "refs" will generate "getters" for each of the view component instances
     // e.g. getBottomField and getStationList
-	refs: [{
-		    selector: 'carousel > panel > #bottomInput',
-		    ref: 'bottomField'
-	        },
-            {
-            selector: 'carousel > list', 
-            ref: 'stationList'
-            }
-    ],
+    config: {
+		refs: { 
+			bottomField: {
+				selector: 'carousel > panel > #bottomInput'
+			},
+	       		stationList:  {
+	            		selector: 'carousel > list'
+	    		}
+		}
+    },
     init: function() {
         console.log('Init home controller');
 		// Start listening for events on views
